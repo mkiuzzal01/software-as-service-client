@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar_1 from "../components/navbars/Navbar_1";
+import Navbar_1 from "../components/navbar/Navbar_1";
 import { items } from "./components/items";
-import { ProductCard } from "../components/cards/card_1";
 import Footer_1 from "../components/footers/Footer_1";
+import { Card_1 } from "../components/cards/Card_1";
 
 export default function page() {
   return (
@@ -19,7 +19,7 @@ export default function page() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {items.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <Card_1 key={product.id} product={product} />
               ))}
             </div>
           </div>

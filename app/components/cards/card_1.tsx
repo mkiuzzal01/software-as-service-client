@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { Star, Heart, ShoppingCart, Eye, Tag } from "lucide-react";
+import { Star, Heart, ShoppingCart, Eye } from "lucide-react";
 
-export function ProductCard({ product }: any) {
+export function Card_1({ product }: any) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
