@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { currencyOptions, navigationItems } from "./utils/navbar_1_data";
+import { Button } from "@/components/ui/button";
 
 export default function Navbar_1() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -113,23 +114,23 @@ export default function Navbar_1() {
                   placeholder="Search the store"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="flex-1 px-4 py-2 ring-1 ring-amber-300
-                   focus:outline-none focus:ring-2 focus:ring-yellow-400 text-gray-800"
+                  className="flex-1 px-4 ring-1 ring-amber-300
+                   focus:outline-none focus:ring-2 focus:ring-yellow-400 text-white"
                 />
-                <button
+                <Button
                   onClick={handleSearchSubmit}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-green-800 px-6 py-2 font-bold transition-colors"
+                  className="bg-yellow-400 hover:bg-yellow-500 rounded-none text-green-800"
                 >
                   SEARCH
-                </button>
+                </Button>
               </div>
             </div>
 
             {/* Cart & Mobile Menu */}
             <div className="flex items-center space-x-4">
               {/* Cart */}
-              <div className="flex items-center space-x-2 bg-white text-green-700 px-4 py-2 rounded cursor-pointer hover:bg-gray-100 transition-colors">
-                <ShoppingCart className="w-5 h-5" />
+              <div className="flex items-center space-x-2 bg-white text-green-700 md:p-2 cursor-pointer rounded hover:bg-gray-100 transition-colors">
+                <ShoppingCart />
                 <span className="font-semibold">{cartItems} ITEMS</span>
                 <ChevronDown className="w-4 h-4" />
               </div>
@@ -162,7 +163,8 @@ export default function Navbar_1() {
                     placeholder="Search the store"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="flex-1 px-4 py-2 focus:outline-none text-gray-800"
+                    className="flex-1 px-4 ring-1 ring-amber-300
+                   focus:outline-none focus:ring-2 focus:ring-yellow-400 text-white"
                   />
                   <button
                     onClick={handleSearchSubmit}

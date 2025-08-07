@@ -7,7 +7,7 @@ import { Card_1 } from "../components/cards/Card_1";
 export default function page() {
   return (
     <div>
-      <header>
+      <header className="sticky top-0 z-50">
         <Navbar_1 />
       </header>
       <main>

@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from "react";
-import { Heart, ShoppingCart, Star, Eye } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Heart, ShoppingCart, Eye } from "lucide-react";
+import Image from "next/image";
 
 export default function ProductCard({
   item,
@@ -8,31 +9,17 @@ export default function ProductCard({
   isInCart = false,
   className = "",
 }) {
-  const renderStars = () => {
-    return Array(5)
-      .fill(0)
-      .map((_, i) => (
-        <Star
-          key={i}
-          size={16}
-          className={
-            i < Math.floor(item.rating)
-              ? "text-yellow-400 fill-current"
-              : "text-gray-300"
-          }
-        />
-      ));
-  };
-
   return (
     <div
       className={`relative bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg ${className}`}
     >
       {/* Image Section */}
       <div className="relative aspect-square bg-gray-100">
-        <img
+        <Image
           src={item.image}
           alt={item.name}
+          height={100}
+          width={100}
           className="w-full h-full object-cover"
         />
 
@@ -95,30 +82,13 @@ export default function ProductCard({
 
         {/* Rating */}
         <div className="flex items-center gap-1 mb-3">
-          <div className="flex">{renderStars()}</div>
           <span className="text-xs text-gray-500">
             ({item.reviews.toLocaleString()})
           </span>
         </div>
 
         {/* Add to Cart Button */}
-        <button
-          disabled={!item.inStock}
-          className={`w-full py-2 rounded-md font-medium flex items-center justify-center gap-2 ${
-            item.inStock
-              ? isInCart
-                ? "bg-green-600 text-white"
-                : "bg-blue-600 text-white hover:bg-blue-700"
-              : "bg-gray-300 text-gray-500 cursor-not-allowed"
-          }`}
-        >
-          <ShoppingCart size={16} />
-          {!item.inStock
-            ? "Out of Stock"
-            : isInCart
-            ? "Added to Cart"
-            : "Add to Cart"}
-        </button>
+        <Button className="bg-green-500">Buy now</Button>
       </div>
     </div>
   );

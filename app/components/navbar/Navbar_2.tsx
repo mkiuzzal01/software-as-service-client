@@ -244,7 +244,7 @@ export default function Navbar_2() {
                       <Link href={megaMenuData[activeMenu].featured.buttonLink}>
                         <button
                           className={cn(
-                            "bg-orange-500 hover:bg-orange-600 text-white",
+                            "bg-green-500 hover:bg-green-600 text-white",
                             "px-4 py-2 rounded-md transition-colors duration-200"
                           )}
                         >
