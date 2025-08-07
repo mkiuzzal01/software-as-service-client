@@ -1,7 +1,7 @@
 import Card_2 from "@/app/components/cards/Card_2";
 import Footer_2 from "@/app/components/footers/Footer_2";
 import Navbar_2 from "@/app/components/navbar/Navbar_2";
-import { items } from "../components/items";
+import { items } from "../../components/cards/components/items";
 
 export default function page() {
   return (
