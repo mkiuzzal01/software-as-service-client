@@ -3,11 +3,11 @@ import Navbar_3 from "@/app/components/navbar/Navbar_3";
 
 export default function page() {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <header>
         <Navbar_3 />
       </header>
-      <main></main>
+      <main className="flex-grow"></main>
       <footer>
         <Footer_3 />
       </footer>
